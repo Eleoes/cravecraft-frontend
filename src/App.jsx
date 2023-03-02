@@ -1,13 +1,14 @@
-import './App.css'
-import Header from './components/Header.jsx';
-import Main from './components/Main.jsx';
+import { Routes, Route } from 'react-router-dom';
+import BaseLayout from './layouts/BaseLayout';
+import Home from './pages/Home';
 
 function App() {
     return (
-    <div className="App">
-      <Header />
-      <Main />
-    </div>
+    <Routes>
+      <Route path="/" element={<BaseLayout />}>
+        <Route index element={<Home />}/>
+      </Route>
+    </Routes>
   )
 }
 
