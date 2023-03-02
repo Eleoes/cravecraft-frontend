@@ -15,7 +15,7 @@
     --charcoal-light: #323232;
 
     /*========== Font and Typography ==========*/
-    --logo-font: "Lilita-One", cursive;
+    --logo-font: "Lilita One", cursive;
     --body-font: "Poppins", serif;
 
     /*.5rem = 8px | 1rem = 16px ...*/
@@ -112,6 +112,10 @@ img {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
+.logo {
+    font-family: var(--logo-font);
+}
+
 .section {
     padding: 6rem 0 2rem;
 }
