@@ -1,1 +1,28 @@
-/*# sourceMappingURL=home.css.map */
+img {
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+.home__content {
+  grid-template-columns: 50% repeat(1, 1fr);
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+  align-items: center;
+}
+
+.home__content {
+  height: 100%;
+}
+
+.home__image {
+  padding-top: 5rem;
+  width: 220px;
+  height: 220px;
+}
+
+.home__logo {
+  font-size: var(--big-font-size);
+}
+
+.home__button {
+  bottom: 0;
+}/*# sourceMappingURL=home.css.map */
