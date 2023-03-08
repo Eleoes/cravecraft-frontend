@@ -95,6 +95,11 @@ h3 {
     font-weight: var(--font-semi-bold);
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 a {
     text-decoration: none;
     color: var(--title-color);
@@ -174,8 +179,12 @@ img {
 }
 
 /*=============== BREAKPOINTS ===============*/
+$small: 350px;
+$medium: 768px;
+$large: 992px;
+
 /* For large devices */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: $large) {
     .container {
         margin-left: var(--mb-1-5);
         margin-right: var(--mb-1-5);
@@ -183,9 +192,9 @@ img {
 }
 
 /* For medium devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $medium) {
     body {
-        margin: 0 0 var(--header-height) 0;
+        margin: 0 0 3rem 0;
     }
 
     .section {
@@ -198,7 +207,7 @@ img {
 }
 
 /* For small devices */
-@media screen and (max-width: 350px) {
+@media screen and (max-width: $small) {
     :root {
         --big-font-size: 2.25rem;
     }
