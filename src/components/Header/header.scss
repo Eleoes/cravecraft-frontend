@@ -24,6 +24,7 @@ header {
         .nav__logo {
             font-family: var(--logo-font);
             color: var(--orange);
+            font-size: var(--h3-font-size);
         }
 
         .nav__logo,
@@ -46,7 +47,7 @@ header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: var(--small-font-size);
+            font-size: var(--normal-font-size);
             color: var(--charcoal);
             font-weight: var(--font-bold);
             transition: .3s;

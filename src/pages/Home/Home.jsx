@@ -8,9 +8,8 @@ const Home = () => {
             <article className="container">
                 <div className="home__content grid">
                     <div className="home__welcome">
-                        <span>Welcome to</span>
-                        <h1 className="home__logo logo">Crave Craft</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illum est atque. Nulla facilis perferendis ut, omnis eligendi consectetur totam. Minus, quo culpa! Ut numquam libero provident mollitia iure? Aspernatur!</p>
+                        <h1 className="home__intro">Cooking is more than just a meal, it's a <span>Craft</span> !</h1>
+                        <p className="home__description">Crave Craft is a cooking lifestyle app designed to further enhance the educational relationship between people and the art of cooking.</p>
                         <Link to="/#">
                             <button className="home__button primary" >Get Started</button>
                         </Link>
