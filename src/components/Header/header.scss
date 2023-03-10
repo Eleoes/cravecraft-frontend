@@ -12,6 +12,7 @@ header {
     @media screen and (max-width: v.$medium) {
         display: flex;
         justify-content: center;
+        position: relative;
     }
 
     nav {
@@ -68,7 +69,6 @@ header {
         }
         
         #nav-home {
-
             @media only screen and (min-width: v.$medium) {
                 display: none;
             }

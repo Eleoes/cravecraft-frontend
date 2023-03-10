@@ -1,10 +1,7 @@
 @use '../../index' as v;
 
-img {
-    filter: drop-shadow(5px 5px 5px #222); 
-}
-
 .home__content {
+    height: 100%;
     grid-template-columns: 50% repeat(1,1fr);
     column-gap: 1.25rem;
     align-items: center;
@@ -12,13 +9,17 @@ img {
     @media screen and (min-width: v.$x-large) {
         margin-top: 6rem;
     }
-}
 
-.home__content {
-    height: 100%;
+    @media screen and (max-width: v.$medium) {
+        grid-template-columns: 100%;
+    }
 
     .home__intro {
         font-size: var(--h1-font-size);
+
+        @media screen and (max-width: v.$medium) {
+            font-size: var(--big-font-size);
+        }
     }
 
     span {
@@ -27,6 +28,21 @@ img {
 
     .home__description {
         margin: 3rem 0;
+    }
+
+    img {
+        filter: drop-shadow(5px 5px 5px #222);
+        width: 100%; 
+    }
+
+    @media screen and (max-width: v.$medium) {
+
+        a {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--mb-2);
+        }
+        
     }
 }
 
@@ -42,4 +58,5 @@ img {
 
 .home__button {
     bottom: 0;
+
 }
