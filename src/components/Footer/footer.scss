@@ -1,0 +1,15 @@
+footer {
+    background-color: var(--charcoal);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 2rem 0 4rem;
+    color: var(--white);
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+
+    .footer__copy {
+        display: block;
+        margin-top: 2rem;
+        text-align: center; 
+    }
+}

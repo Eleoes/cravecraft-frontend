@@ -1,3 +1,5 @@
+@use '../../index' as v;
+
 img {
     filter: drop-shadow(5px 5px 5px #222); 
 }
@@ -6,10 +8,26 @@ img {
     grid-template-columns: 50% repeat(1,1fr);
     column-gap: 1.25rem;
     align-items: center;
+
+    @media screen and (min-width: v.$x-large) {
+        margin-top: 6rem;
+    }
 }
 
 .home__content {
     height: 100%;
+
+    .home__intro {
+        font-size: var(--h1-font-size);
+    }
+
+    span {
+        color: var(--orange);
+    }
+
+    .home__description {
+        margin: 3rem 0;
+    }
 }
 
 .home__image {

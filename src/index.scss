@@ -15,8 +15,8 @@
     --charcoal-light: #323232;
 
     /*========== Font and Typography ==========*/
-    --logo-font: "Lilita One", cursive;
-    --body-font: "Poppins", serif;
+    --logo-font: "barricada-pro", serif;
+    --body-font: "proxima-nova", sans-serif;
 
     /*.5rem = 8px | 1rem = 16px ...*/
     --big-font-size: 3.5rem;
@@ -33,6 +33,7 @@
     --font-normal: 400;
     --font-medium: 500;
     --font-semi-bold: 600;
+    --font-bold: 700;
 
     /*========== z index ==========*/
     --z-tooltip: 10;
@@ -182,6 +183,7 @@ img {
 $small: 350px;
 $medium: 768px;
 $large: 992px;
+$x-large: 1800px;
 
 /* For large devices */
 @media screen and (max-width: $large) {
