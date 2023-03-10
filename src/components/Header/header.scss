@@ -10,8 +10,8 @@ header {
     background-color: var(--body-color);
 
     @media screen and (max-width: v.$medium) {
-        top: initial;
-        bottom: 0;
+        display: flex;
+        justify-content: center;
     }
 
     nav {
@@ -25,6 +25,10 @@ header {
             font-family: var(--logo-font);
             color: var(--orange);
             font-size: var(--h3-font-size);
+
+            @media screen and (max-width: v.$medium) {
+                font-size: var(--h1-font-size);
+            }
         }
 
         .nav__logo,
