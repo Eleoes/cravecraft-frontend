@@ -1,3 +1,5 @@
+@use '../../index' as v;
+
 footer {
     background-color: var(--charcoal);
     border-top: 1px solid rgba(0,0,0,0.1);
@@ -11,5 +13,14 @@ footer {
         display: block;
         margin-top: 2rem;
         text-align: center; 
+
+        @media screen and (max-width: v.$medium) {
+            margin-top: 0;
+        } 
     }
+
+    @media screen and (max-width: v.$medium) {
+        position: relative;
+        padding: 1rem 0 1rem;
+    } 
 }

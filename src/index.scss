@@ -180,7 +180,7 @@ img {
 }
 
 /*=============== BREAKPOINTS ===============*/
-$small: 350px;
+$small: 450px;
 $medium: 768px;
 $large: 992px;
 $x-large: 1800px;
@@ -195,9 +195,6 @@ $x-large: 1800px;
 
 /* For medium devices */
 @media screen and (max-width: $medium) {
-    body {
-        margin: 0 0 3rem 0;
-    }
 
     .section {
         padding: 2rem 0 4rem;
@@ -205,6 +202,12 @@ $x-large: 1800px;
 
     .section__subtitle {
         margin-bottom: var(--mb-3);
+    }
+}
+
+main {
+    @media screen and (min-width: $large) {
+        margin-top: 4rem;
     }
 }
 
@@ -218,7 +221,6 @@ $x-large: 1800px;
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
     }
-
 }
 
 
