@@ -76,6 +76,12 @@
   justify-content: space-between;
 }
 
+.home__button {
+  bottom: 0;
+  margin-left: 1075px;
+  margin-bottom: 20px;
+} /*# sourceMappingURL=home.css.map */
+
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
 @media screen and (max-width: 992px) {
@@ -94,6 +100,12 @@
   .project__title {
     margin-bottom: 0.25rem;
   }
+
+  .home__button {
+    bottom: 0;
+    margin-left: 135px;
+    margin-bottom: 20px;
+  } /*# sourceMappingURL=home.css.map */
 }
 
 /* For medium devices */
@@ -111,6 +123,12 @@
   .project__img {
     width: 100%;
   }
+
+  .home__button {
+    bottom: 0;
+    margin-left: 135px;
+    margin-bottom: 20px;
+  } /*# sourceMappingURL=home.css.map */
 }
 
 /* For small devices */
@@ -122,4 +140,10 @@
   .portfolio__filters {
     column-gap: 0.25rem;
   }
+
+  .home__button {
+    bottom: 0;
+    margin-left: 135px;
+    margin-bottom: 20px;
+  } /*# sourceMappingURL=home.css.map */
 }

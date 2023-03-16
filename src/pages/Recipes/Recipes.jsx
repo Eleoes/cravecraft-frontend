@@ -6,6 +6,9 @@ function Recipes({ recipes }) {
   const loaded = () => {
     return (
       <>
+        <Link to="/create">
+          <button className="home__button primary">Create </button>
+        </Link>
         <div className="portfolio__filters">
           <div className="portfolio__container container grid">
             {recipes.map(({ image, title, _id }) => {
