@@ -8,8 +8,8 @@ import Recipe from "./pages/Recipe/Recipe";
 function App() {
   const [recipes, setRecipes] = useState(null);
 
-  const API_URL = "http://localhost:4000/api/recipes";
-  // const API_URL = "https://cravecraft-api.onrender.com/api/recipes";
+  // const API_URL = "http://localhost:4000/api/recipes";
+  const API_URL = "https://cravecraft-api.onrender.com/api/recipes";
 
   const getRecipes = async () => {
     try {
@@ -42,8 +42,12 @@ function App() {
     <Routes>
       <Route path="/" element={<BaseLayout />}>
         <Route index element={<Home />} />
-        <Route path="Recipes" element={<Recipes recipes={recipes} />} />
-        <Route path="Recipes/:id" element={<Recipe />} />
+
+        <Route path="recipes">
+          <Route index element={<Recipes recipes={recipes} />} />
+          <Route path=":id" element={<Recipe recipes={recipes}/>} />
+        </Route>
+
       </Route>
     </Routes>
   );
