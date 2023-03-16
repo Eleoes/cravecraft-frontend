@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import RecipeDetail from '../../components/RecipeDetail/RecipeDetail';
 
 const Recipe = (props) => {
     const { id } = useParams();
@@ -7,9 +8,7 @@ const Recipe = (props) => {
 
     const loaded = () => {
         return (
-            <>
-            <h1>{recipe.title}</h1>
-            </>
+            <RecipeDetail recipe = {recipe}/>
         )
     }
 
