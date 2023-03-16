@@ -22,7 +22,7 @@
 }
 
 .portfolio__container {
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(3, max-content);
   gap: 3rem;
   justify-content: center;
 }
@@ -37,6 +37,7 @@
 
 .project__img {
   width: 295px;
+  height: 295px;
   border-radius: 1rem;
   margin-bottom: var(--mb-1);
 }
