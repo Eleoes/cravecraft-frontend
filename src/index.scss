@@ -87,7 +87,17 @@ textarea {
 body {
     background-color: var(--white);
     color: var(--charcoal-light);
+
+    #root {
+        position:relative;
+        min-height:100vh;
+    }
+
+    main {
+        padding-bottom: 142px;
+    }
 }
+
 
 h1,
 h2,
@@ -123,7 +133,7 @@ img {
 }
 
 .section {
-    padding: 6rem 0 2rem;
+    padding: 0rem 0 2rem;
 }
 
 .section__title {
