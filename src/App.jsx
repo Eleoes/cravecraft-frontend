@@ -3,6 +3,7 @@ import BaseLayout from "./layouts/BaseLayout";
 import Home from "./pages/Home/Home";
 import { useEffect, useState } from "react";
 import Recipes from "./pages/Recipes/Recipes";
+import Recipe from "./pages/Recipe/Recipe";
 
 function App() {
   const [recipes, setRecipes] = useState(null);
@@ -42,6 +43,7 @@ function App() {
       <Route path="/" element={<BaseLayout />}>
         <Route index element={<Home />} />
         <Route path="Recipes" element={<Recipes recipes={recipes} />} />
+        <Route path="Recipes/:id" element={<Recipe />} />
       </Route>
     </Routes>
   );
