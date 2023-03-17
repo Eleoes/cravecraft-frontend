@@ -1,4 +1,4 @@
-import "./recipes.css";
+import "./recipes.scss";
 import { Link } from "react-router-dom";
 
 function Recipes({ recipes }) {
@@ -11,25 +11,25 @@ function Recipes({ recipes }) {
         </Link>
         <div className="portfolio__filters">
           <div className="portfolio__container container grid">
-            {recipes.map(({ image, title, _id }) => {
+            {recipes.map((recipe) => {
               return (
-                <div className="project__card" key={_id}>
-                  <Link to={`/recipes/${_id}`}>
+                <div className="project__card" key={recipe._id}>
+                  <Link to={`/recipes/${recipe._id}`}>
                     <img
-                      src={image}
+                      src={recipe.image}
                       alt="project image"
                       className="project__img"
                     />
                   </Link>
-                  <Link to={`/recipes/${_id}`}>
-                    <h3 className="project__title">{title}</h3>
+                  <Link to={`/recipes/${recipe._id}`}>
+                    <h3 className="project__title">{recipe.title}</h3>
                   </Link>
                   <div className="project__links">
-                    <a href={_id} target="_blank" className="project__button">
+                    <a href={recipe._id} target="_blank" className="project__button">
                       Ingredients{" "}
                       <i className="bx bx-right-arrow-alt project__button-icon"></i>
                     </a>
-                    <a href={_id} target="_blank" className="project__button">
+                    <a href={recipe._id} target="_blank" className="project__button">
                       Directions{" "}
                       <i className="bx bx-right-arrow-alt project__button-icon"></i>
                     </a>

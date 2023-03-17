@@ -4,12 +4,13 @@ import Home from "./pages/Home/Home";
 import { useEffect, useState } from "react";
 import Recipes from "./pages/Recipes/Recipes";
 import Create from "./pages/Create/Create";
+import Recipe from "./pages/Recipe/Recipe";
 
 function App() {
   const [recipes, setRecipes] = useState(null);
 
-  const API_URL = "http://localhost:4000/api/recipes";
-  // const API_URL = "https://cravecraft-api.onrender.com/api/recipes";
+  // const API_URL = "http://localhost:4000/api/recipes";
+  const API_URL = "https://cravecraft-api.onrender.com/api/recipes";
 
   const getRecipes = async () => {
     try {
@@ -42,11 +43,11 @@ function App() {
     <Routes>
       <Route path="/" element={<BaseLayout />}>
         <Route index element={<Home />} />
-        <Route path="Recipes" element={<Recipes recipes={recipes} />} />
-        {/* <Route
-          path="Create"
-          element={<Create createRecipes={createRecipes} />}
-        /> */}
+
+        <Route path="recipes">
+          <Route index element={<Recipes recipes={recipes} />} />
+          <Route path=":id" element={<Recipe recipes={recipes} />} />
+        </Route>
       </Route>
     </Routes>
   );
