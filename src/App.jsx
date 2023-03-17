@@ -3,6 +3,7 @@ import BaseLayout from "./layouts/BaseLayout";
 import Home from "./pages/Home/Home";
 import { useEffect, useState } from "react";
 import Recipes from "./pages/Recipes/Recipes";
+import Create from "./pages/Create/Create";
 import Recipe from "./pages/Recipe/Recipe";
 
 function App() {
@@ -21,18 +22,18 @@ function App() {
     }
   };
 
-  // const createRecipes = async (recipe) => {
-  //   // make post request to create recipe
-  //   await fetch(URL, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "Application/json",
-  //     },
-  //     body: JSON.stringify(recipe),
-  //   });
-  //   // update list of recipes
-  //   getRecipes();
-  // };
+  const createRecipes = async (recipe) => {
+    // make post request to create recipe
+    await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(recipe),
+    });
+    // update list of recipes
+    getRecipes();
+  };
 
   useEffect(() => {
     getRecipes();
@@ -45,9 +46,12 @@ function App() {
 
         <Route path="recipes">
           <Route index element={<Recipes recipes={recipes} />} />
-          <Route path=":id" element={<Recipe recipes={recipes}/>} />
+          <Route path=":id" element={<Recipe recipes={recipes} />} />
         </Route>
-
+        <Route
+          path="create"
+          element={<Create createRecipes={createRecipes} />}
+        />
       </Route>
     </Routes>
   );
