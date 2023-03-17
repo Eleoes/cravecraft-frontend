@@ -22,18 +22,18 @@ function App() {
     }
   };
 
-  // const createRecipes = async (recipe) => {
-  //   // make post request to create recipe
-  //   await fetch(URL, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "Application/json",
-  //     },
-  //     body: JSON.stringify(recipe),
-  //   });
-  //   // update list of recipes
-  //   getRecipes();
-  // };
+  const createRecipes = async (recipe) => {
+    // make post request to create recipe
+    await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(recipe),
+    });
+    // update list of recipes
+    getRecipes();
+  };
 
   useEffect(() => {
     getRecipes();
@@ -48,6 +48,10 @@ function App() {
           <Route index element={<Recipes recipes={recipes} />} />
           <Route path=":id" element={<Recipe recipes={recipes} />} />
         </Route>
+        <Route
+          path="create"
+          element={<Create createRecipes={createRecipes} />}
+        />
       </Route>
     </Routes>
   );
