@@ -7,7 +7,7 @@ function Recipes({ recipes }) {
     return (
       <>
         <Link to="/create">
-          <button className="home__button primary">Create </button>
+          <button className="recipe__button primary">Create </button>
         </Link>
         <div className="portfolio__filters">
           <div className="portfolio__container container grid">
@@ -25,11 +25,19 @@ function Recipes({ recipes }) {
                     <h3 className="project__title">{recipe.title}</h3>
                   </Link>
                   <div className="project__links">
-                    <a href={recipe._id} target="_blank" className="project__button">
+                    <a
+                      href={recipe._id}
+                      target="_blank"
+                      className="project__button"
+                    >
                       Ingredients{" "}
                       <i className="bx bx-right-arrow-alt project__button-icon"></i>
                     </a>
-                    <a href={recipe._id} target="_blank" className="project__button">
+                    <a
+                      href={recipe._id}
+                      target="_blank"
+                      className="project__button"
+                    >
                       Directions{" "}
                       <i className="bx bx-right-arrow-alt project__button-icon"></i>
                     </a>
