@@ -1,3 +1,5 @@
+@use '../../index' as v;
+
 .recipe__wrapper {
     display: flex;
     flex-direction: row;
@@ -47,6 +49,71 @@
         padding-right: 1rem;
         img {
             border-radius: 2rem;
+        }
+    }
+
+    @media screen and (max-width: v.$medium) {
+        flex-direction: column;
+        align-items: center;
+
+        .recipe__image {
+            padding-right: 0;
+            margin-bottom: 2rem;
+            width: 80%;
+        }
+
+        .recipe__details {
+            max-width: 100%;
+            width: 100%;
+
+            .recipe__info {
+                margin: 0;
+                width: 50%;
+            }
+
+            .recipe__instructions {
+                width: 50%;
+            }
+        }
+    }
+
+    @media screen and (max-width: v.$small) {
+        flex-direction: column;
+        align-items: center;
+
+        .recipe__image {
+            padding-right: 0;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .recipe__details {
+            max-width: 100%;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+
+            .recipe__info {
+                margin: 0;
+                width: 100%;
+                
+                ul {
+                    margin: 0;
+                }
+
+                ul li {
+                    padding-bottom: .5rem;
+                }
+            }
+
+            .recipe__subtitle {
+                display: none;
+            }
+
+            .recipe__instructions {
+                width: 100%;
+                padding-left: 1rem;
+            }
         }
     }
 }

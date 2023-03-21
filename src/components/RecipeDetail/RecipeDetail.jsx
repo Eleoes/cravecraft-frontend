@@ -14,16 +14,16 @@ const RecipeDetail = ({ recipe }) => {
                             <span className="recipe__subtitle">General Info</span>
                             <ul>
                                 <li>
-                                    <i class='bx bx-restaurant'></i> <span className="recipe__label">Prep time: </span>{recipe.prepTime}
+                                    <i className='bx bx-restaurant'></i> <span className="recipe__label">Prep time: </span>{recipe.prepTime}
                                 </li>
                                 <li>
-                                    <i class='bx bx-time'></i> <span className="recipe__label">Cooking time: </span>{recipe.cookingTime}
+                                    <i className='bx bx-time'></i> <span className="recipe__label">Cooking time: </span>{recipe.cookingTime}
                                 </li>
                                 <li>
-                                    <i class='bx bx-signal-5'></i> <span className="recipe__label">Skill level: </span>{recipe.skillLevel}
+                                    <i className='bx bx-signal-5'></i> <span className="recipe__label">Skill level: </span>{recipe.skillLevel}
                                 </li>
                                 <li>
-                                    <i class='bx bxs-dish'></i> <span className="recipe__label">Makes: </span>{recipe.makes}
+                                    <i className='bx bxs-dish'></i> <span className="recipe__label">Makes: </span>{recipe.makes}
                                 </li>
                             </ul>
 
