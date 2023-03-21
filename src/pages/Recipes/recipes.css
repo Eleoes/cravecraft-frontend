@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
+  column-gap: 0.75rem;
   margin-bottom: var(--mb-2);
 }
 
@@ -56,7 +56,7 @@
   display: flex;
   align-items: center;
   -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+  column-gap: 0.25rem;
 }
 
 .project__button-icon {
@@ -82,7 +82,7 @@
   bottom: 0;
   margin-left: 1075px;
   margin-bottom: 20px;
-} 
+}
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
 @media screen and (max-width: 992px) {
@@ -102,7 +102,7 @@
     bottom: 0;
     margin-left: 135px;
     margin-bottom: 20px;
-  } 
+  }
 }
 /* For medium devices */
 @media screen and (max-width: 768px) {
@@ -121,7 +121,7 @@
     bottom: 0;
     margin-left: 135px;
     margin-bottom: 20px;
-  } 
+  }
 }
 /* For small devices */
 @media screen and (max-width: 350px) {
@@ -130,11 +130,11 @@
   }
   .portfolio__filters {
     -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
   .home__button {
     bottom: 0;
     margin-left: 135px;
     margin-bottom: 20px;
-  } 
-}/*# sourceMappingURL=recipes.css.map */
+  }
+} /*# sourceMappingURL=recipes.css.map */

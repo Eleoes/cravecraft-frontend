@@ -1,0 +1,134 @@
+.create__container {
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  column-gap: 6rem;
+  padding-bottom: 3rem;
+}
+
+.create__image {
+  width: 40%;
+  padding-right: 1rem;
+  img {
+    border-radius: 2rem;
+  }
+}
+
+.create__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  margin-left: 600px;
+  margin-bottom: 1rem;
+  color: var(--charcoal-light);
+}
+
+.create__form {
+  margin-right: 0px;
+  width: 360px;
+  grid-template-columns: repeat(2, max-content);
+}
+
+.create__form-div {
+  position: relative;
+  height: 4rem;
+  margin-bottom: var(--mb-2);
+}
+
+.create__form-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: none;
+  color: var(--text-color);
+  outline: none;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.create__form-input-small {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: none;
+  color: var(--text-color);
+  outline: none;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.create__form-input-long {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300%;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: none;
+  color: var(--text-color);
+  outline: none;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.create__form-tag {
+  position: absolute;
+  top: -0.75rem;
+  left: 1.25rem;
+  font-size: var(--smaller-font-size);
+  padding: 0.25rem;
+  background-color: white;
+  z-index: 10;
+}
+
+.create__form-area {
+  height: 11rem;
+}
+
+.create__form-area textarea {
+  resize: none;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .create__container {
+    column-gap: 3rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .create__container {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+  .create__info {
+    justify-content: center;
+  }
+
+  .create__form {
+    margin: 0 auto;
+  }
+
+  .create__content {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .create__form {
+    width: 100%;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+}
