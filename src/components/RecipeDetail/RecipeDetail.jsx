@@ -5,6 +5,11 @@ const RecipeDetail = ({ recipe }) => {
         <section className="section">
             <article className="container">
                 <h1 className="section__title">{recipe.title}</h1>
+                {/* TODO: Move buttons to dropdown menu and place on corner of recipe.  */}
+                <div className="recipe__buttons-wrapper">
+                    <button className="recipe__button"><i className='bx bxs-edit'></i></button>
+                    <button className="recipe__button"><i className='bx bxs-trash' ></i></button>
+                </div>
                 <div className="recipe__wrapper">
                     <div className="recipe__image">
                         <img src={recipe.image} alt={recipe.title} />

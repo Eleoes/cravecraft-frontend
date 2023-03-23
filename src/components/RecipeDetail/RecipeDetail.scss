@@ -1,4 +1,16 @@
 @use '../../index' as v;
+.recipe__buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+
+    .recipe__button {
+        font-size: 1.25rem;
+        background: transparent;
+        color: var(--orange);
+    }
+}
 
 .recipe__wrapper {
     display: flex;
