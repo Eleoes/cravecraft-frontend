@@ -8,13 +8,15 @@ const Recipe = (props) => {
 
     const loaded = () => {
         return (
-            <RecipeDetail recipe = {recipe}/>
+            <RecipeDetail recipe={recipe} updateRecipe={props.updateRecipe}/>
         )
     }
 
     const loading = () => {
+        // TODO: create a Loading component
         return <h1>Loading...</h1>
     }
+
     return (
         <div>
             { recipe ? loaded() : loading() }
