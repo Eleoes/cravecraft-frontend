@@ -1,6 +1,8 @@
 import './RecipeDetail.scss';
+import { useState, useEffect } from 'react';
 
-const RecipeDetail = ({ recipe }) => {
+const RecipeDetail = ({ recipe, updateRecipe }) => {
+    
     return (
         <section className="section">
             <article className="container">
