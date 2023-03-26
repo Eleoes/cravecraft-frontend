@@ -39,7 +39,9 @@ function App() {
   }, []);
 
   const updateRecipe = async (recipe, id) => {
-    await fetch(API_URL + id, {
+    console.log("id value", id);
+
+    await fetch(API_URL + '/' + id, {
       method: 'PUT',
       headers: {
         "Content-Type": "Application/json",
