@@ -39,7 +39,7 @@ function App() {
   }, []);
 
   const updateRecipe = async (recipe, id) => {
-    console.log("id value", id);
+    // console.log("id value", id);
 
     await fetch(API_URL + '/' + id, {
       method: 'PUT',
@@ -52,6 +52,13 @@ function App() {
     getRecipes();
   }
 
+  const deleteRecipe = async (id) => {
+    await fetch(API_URL + '/' + id, {
+      method: 'DELETE',
+    });
+    getRecipes();
+  };
+
   return (
     <Routes>
       <Route path="/" element={<BaseLayout />}>
@@ -59,7 +66,12 @@ function App() {
 
         <Route path="recipes">
           <Route index element={<Recipes recipes={recipes} />} />
-          <Route path=":id" element={<Recipe recipes={recipes} updateRecipe={updateRecipe}/>} />
+          <Route 
+            path=":id" 
+            element={<Recipe recipes={recipes} 
+            updateRecipe={updateRecipe}
+            deleteRecipe={deleteRecipe}
+          />} />
         </Route>
 
         <Route
