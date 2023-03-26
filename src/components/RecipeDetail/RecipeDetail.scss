@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
+    margin-top: 1rem;
 
     .recipe__button {
         font-size: 1.25rem;
@@ -121,10 +122,6 @@
                 ul li {
                     padding-bottom: .5rem;
                 }
-            }
-
-            .recipe__subtitle {
-                display: none;
             }
 
             .recipe__instructions {

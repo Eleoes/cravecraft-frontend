@@ -1,10 +1,8 @@
 import './RecipeDetail.scss';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 const RecipeDetail = ({ recipe, updateRecipe }) => {
 
-    const { id } = useParams();
     const [editMode, setEditMode] = useState(false);
     const [formData, setFormData] = useState({
         title: recipe.title,
@@ -16,11 +14,6 @@ const RecipeDetail = ({ recipe, updateRecipe }) => {
         ingredients: recipe.ingredients,
         tips: recipe.tips,
     });
-
-    // Use useEffect to update the recipe prop whenever formData changes
-    useEffect(() => {
-        updateRecipe(formData, id);
-    }, [formData]);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -36,6 +29,20 @@ const RecipeDetail = ({ recipe, updateRecipe }) => {
         setEditMode(false);
     };
     
+    const handleCancel = () => {
+        setFormData({
+            title: recipe.title,
+            image: recipe.image,
+            prepTime: recipe.prepTime,
+            cookingTime: recipe.cookingTime,
+            skillLevel: recipe.skillLevel,
+            makes: recipe.makes,
+            ingredients: recipe.ingredients,
+            tips: recipe.tips,
+        });
+        setEditMode(false);
+    };
+
     return (
         <section className="section">
             <article className="container">
@@ -43,11 +50,16 @@ const RecipeDetail = ({ recipe, updateRecipe }) => {
                 {/* TODO: Move buttons to dropdown menu and place on corner of recipe.  */}
                 <div className="recipe__buttons-wrapper">
                     {editMode ? (
-                        <button className="recipe__button" onClick={handleSubmit}>Submit</button>
+                        <>
+                        <button className="primary" onClick={handleSubmit}>Submit Changes</button>
+                        <button className="secondary" onClick={handleCancel}>Cancel</button>
+                        </>
                     ) : (
-                        <button className="recipe__button" onClick={() => setEditMode(true)}><i className='bx bxs-edit'></i></button>
+                        <>
+                        <button className="primary" onClick={() => setEditMode(true)}><i className='bx bxs-edit'></i> Edit</button>
+                        <button className="secondary"><i className='bx bxs-trash' ></i> Delete</button>
+                        </>
                     )}
-                    <button className="recipe__button"><i className='bx bxs-trash' ></i></button>
                 </div>
 
                 <div className="recipe__wrapper">
@@ -58,6 +70,7 @@ const RecipeDetail = ({ recipe, updateRecipe }) => {
                         <div className="recipe__info">
                             <span className="recipe__subtitle">General Info</span>
                             <ul>
+                                {/* prepTime */}
                                 <li>
                                     <i className='bx bx-restaurant'></i> <span className="recipe__label">Prep time: </span>{editMode ? (
                                         <input 
@@ -68,27 +81,67 @@ const RecipeDetail = ({ recipe, updateRecipe }) => {
                                         />
                                     ) : ( formData.prepTime )}
                                 </li>
+                                {/* cookingTime */}
                                 <li>
-                                    <i className='bx bx-time'></i> <span className="recipe__label">Cooking time: </span>{recipe.cookingTime}
+                                    <i className='bx bx-time'></i> <span className="recipe__label">Cooking time: </span>{editMode ? (
+                                        <input
+                                            type="text"
+                                            name="cookingTime"
+                                            value={formData.cookingTime}
+                                            onChange={handleChange}
+                                        />
+                                    ) : (formData.cookingTime)}
                                 </li>
+                                {/* skillLevel */}
                                 <li>
-                                    <i className='bx bx-signal-5'></i> <span className="recipe__label">Skill level: </span>{recipe.skillLevel}
+                                    <i className='bx bx-signal-5'></i> <span className="recipe__label">Skill level: </span>{editMode ? (
+                                        <input
+                                            type="text"
+                                            name="skillLevel"
+                                            value={formData.skillLevel}
+                                            onChange={handleChange}
+                                        />
+                                    ): (formData.skillLevel)}
                                 </li>
+                                {/* makes */}
                                 <li>
-                                    <i className='bx bxs-dish'></i> <span className="recipe__label">Makes: </span>{recipe.makes}
+                                    <i className='bx bxs-dish'></i> <span className="recipe__label">Makes: </span>{editMode ? (
+                                        <input
+                                            type="text"
+                                            name="makes"
+                                            value={formData.makes}
+                                            onChange={handleChange}
+                                        />
+                                    ): (formData.makes)}
                                 </li>
                             </ul>
 
                             {/* TODO: Change Schema to make Ingredients mappable */}
                             <span className="recipe__subtitle">Ingredients</span>
                             <ul>
-                                <li>{recipe.ingredients}</li>
+                                <li>{editMode ? (
+                                    <input
+                                        type="text"
+                                        name="ingredients"
+                                        value={formData.ingredients}
+                                        onChange={handleChange}
+                                    />
+                                ) : (formData.ingredients)}
+                                </li>
                             </ul>
 
                             {/* TODO: Change Schema to make Tips mappable */}
                             <span className="recipe__subtitle">Tips for this recipe</span>
                             <ul>
-                                <li>{recipe.tips}</li>
+                                <li>{editMode ? (
+                                    <input
+                                        type="text"
+                                        name="tips"
+                                        value={formData.tips}
+                                        onChange={handleChange}
+                                    />
+                                ) : (formData.tips)}
+                                </li>
                             </ul>
                         </div>
 
