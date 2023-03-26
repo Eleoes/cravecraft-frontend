@@ -1,7 +1,9 @@
 import './RecipeDetail.scss';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const RecipeDetail = ({ recipe, updateRecipe }) => {
+const RecipeDetail = ({ recipe, updateRecipe, deleteRecipe }) => {
+    const navigate = useNavigate();
 
     const [editMode, setEditMode] = useState(false);
     const [formData, setFormData] = useState({
@@ -43,6 +45,16 @@ const RecipeDetail = ({ recipe, updateRecipe }) => {
         setEditMode(false);
     };
 
+    const handleDelete = () => {
+        const confirmDelete = window.confirm(
+            'Are you sure you want to delete this recipe?'
+        );
+        if (confirmDelete) {
+            deleteRecipe(recipe._id);
+            navigate('/recipes');
+        };
+    };
+
     return (
         <section className="section">
             <article className="container">
@@ -57,7 +69,7 @@ const RecipeDetail = ({ recipe, updateRecipe }) => {
                     ) : (
                         <>
                         <button className="primary" onClick={() => setEditMode(true)}><i className='bx bxs-edit'></i> Edit</button>
-                        <button className="secondary"><i className='bx bxs-trash' ></i> Delete</button>
+                        <button className="secondary" onClick={handleDelete}><i className='bx bxs-trash' ></i> Delete</button>
                         </>
                     )}
                 </div>
