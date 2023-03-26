@@ -1,27 +1,72 @@
 import './RecipeDetail.scss';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const RecipeDetail = ({ recipe, updateRecipe }) => {
+
+    const { id } = useParams();
+    const [editMode, setEditMode] = useState(false);
+    const [formData, setFormData] = useState({
+        title: recipe.title,
+        image: recipe.image,
+        prepTime: recipe.prepTime,
+        cookingTime: recipe.cookingTime,
+        skillLevel: recipe.skillLevel,
+        makes: recipe.makes,
+        ingredients: recipe.ingredients,
+        tips: recipe.tips,
+    });
+
+    // Use useEffect to update the recipe prop whenever formData changes
+    useEffect(() => {
+        updateRecipe(formData, id);
+    }, [formData]);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        updateRecipe(formData, recipe._id);
+        setEditMode(false);
+    };
     
     return (
         <section className="section">
             <article className="container">
-                <h1 className="section__title">{recipe.title}</h1>
+                <h1 className="section__title">{formData.title}</h1>
                 {/* TODO: Move buttons to dropdown menu and place on corner of recipe.  */}
                 <div className="recipe__buttons-wrapper">
-                    <button className="recipe__button"><i className='bx bxs-edit'></i></button>
+                    {editMode ? (
+                        <button className="recipe__button" onClick={handleSubmit}>Submit</button>
+                    ) : (
+                        <button className="recipe__button" onClick={() => setEditMode(true)}><i className='bx bxs-edit'></i></button>
+                    )}
                     <button className="recipe__button"><i className='bx bxs-trash' ></i></button>
                 </div>
+
                 <div className="recipe__wrapper">
                     <div className="recipe__image">
-                        <img src={recipe.image} alt={recipe.title} />
+                        <img src={formData.image} alt={formData.title} />
                     </div>
                     <div className="recipe__details">
                         <div className="recipe__info">
                             <span className="recipe__subtitle">General Info</span>
                             <ul>
                                 <li>
-                                    <i className='bx bx-restaurant'></i> <span className="recipe__label">Prep time: </span>{recipe.prepTime}
+                                    <i className='bx bx-restaurant'></i> <span className="recipe__label">Prep time: </span>{editMode ? (
+                                        <input 
+                                            type="text"
+                                            name="prepTime"
+                                            value={formData.prepTime}
+                                            onChange={handleChange}
+                                        />
+                                    ) : ( formData.prepTime )}
                                 </li>
                                 <li>
                                     <i className='bx bx-time'></i> <span className="recipe__label">Cooking time: </span>{recipe.cookingTime}
