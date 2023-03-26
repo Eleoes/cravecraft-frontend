@@ -1,0 +1,52 @@
+@use '../../index' as v;
+
+.about__content {
+    height: 100%;
+    grid-template-columns: 50% repeat(1,1fr);
+    column-gap: 1.25rem;
+    align-items: center;
+
+    @media screen and (min-width: v.$x-large) {
+        margin-top: 6rem;
+    }
+
+    @media screen and (max-width: v.$medium) {
+        grid-template-columns: 100%;
+    }
+
+    .about__title {
+        font-size: var(--h1-font-size);
+
+        @media screen and (max-width: v.$medium) {
+            font-size: var(--big-font-size);
+        }
+    }
+
+    .about__subtitle {
+        font-size: var(--h2-font-size);
+        margin-bottom: var(--mb-1);
+    }
+
+    .about__text {
+        margin: 3rem 0;
+    }
+
+    .about__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: var(--big-font-size);
+
+        li {
+            margin-bottom: var(--mb-1);
+        }
+    }
+
+    @media screen and (max-width: v.$medium) {
+
+        .about__list {
+            font-size: var(--normal-font-size);
+        }
+        
+    }
+}

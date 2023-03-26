@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import BaseLayout from "./layouts/BaseLayout";
 import Home from "./pages/Home/Home";
-import { useEffect, useState } from "react";
+import About from "./pages/About/About";
 import Recipes from "./pages/Recipes/Recipes";
 import Create from "./pages/Create/Create";
 import Recipe from "./pages/Recipe/Recipe";
@@ -63,6 +64,7 @@ function App() {
     <Routes>
       <Route path="/" element={<BaseLayout />}>
         <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
 
         <Route path="recipes">
           <Route index element={<Recipes recipes={recipes} />} />
