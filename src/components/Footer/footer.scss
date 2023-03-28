@@ -11,6 +11,10 @@ footer {
     position: absolute;
     bottom: 0;
 
+    nav {
+        display: none;
+    }
+
     .footer__copy {
         text-align: center; 
 
@@ -20,7 +24,44 @@ footer {
     }
 
     @media screen and (max-width: v.$medium) {
-        position: relative;
-        padding: 1rem 0 1rem;
+        display: flex;
+        background-color: var(--white);
+        border-top: none;
+        position: sticky;
+        height: 6rem;
+
+        .desktop {
+            display: none;
+        }
+
+        nav {
+            background-color: var(--orange);
+            display: flex;
+            justify-content: center;
+            align-self: flex-start;
+            height:auto;
+            width: 100%;
+            position: relative;
+            top: 0;
+            border-radius: 1rem;
+            font-size: 1rem;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+
+            ul {
+                display: flex;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                flex: 1;
+            }
+
+            a {
+                display: block;
+                text-align: center;
+                padding: 1rem;
+            }
+        }
     } 
 }
