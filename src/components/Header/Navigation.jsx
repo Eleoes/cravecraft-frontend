@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     return (
-        <nav className="container" role="navigation">
+        <nav className="container" role="navigation" aria-label="Main">
             <Link to="/" className="nav__logo">Crave Craft</Link>
             <ul className="nav__list grid">
                 <li className="nav__item">
