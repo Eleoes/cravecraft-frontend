@@ -33,7 +33,7 @@ function Create({ recipes, createRecipes }) {
         <article className="container">
           <h1 className="create__title">Add New Recipe</h1>
 
-          <div className="create__container">
+          <div className="create__wrapper">
             <div className="create__image">
               <img src={CreateFoodImage} alt="default recipe" />
             </div>
