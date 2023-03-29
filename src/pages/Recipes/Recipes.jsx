@@ -6,9 +6,12 @@ function Recipes({ recipes }) {
   const loaded = () => {
     return (
       <>
-        <Link to="/create">
-          <button className="recipe__button primary">Create </button>
-        </Link>
+        <div className="create__buttons-wrapper">
+          <Link to="/create">
+            <button className="primary">Create </button>
+          </Link>
+        </div>
+
         <div className="recipes__filters">
           <div className="recipes__container container grid">
             {recipes.map((recipe) => {
