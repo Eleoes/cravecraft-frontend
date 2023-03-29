@@ -28,123 +28,153 @@ function Create({ recipes, createRecipes }) {
   };
 
   return (
-    <>
-      <section className="section">
-        <article className="container">
-          <h1 className="create__title">Add New Recipe</h1>
+    <section className="section">
+      <article className="container">
+        <h1 className="section__title">Create New Recipe</h1>
+        {/* TODO: Move buttons to dropdown menu and place on corner of create.  */}
 
-          <div className="create__wrapper">
-            <div className="create__image">
-              <img src={CreateFoodImage} alt="default recipe" />
-            </div>
+        <div className="create__wrapper">
+          <div className="create__image">
+            <img src={CreateFoodImage} alt="default recipe" />
           </div>
 
-          <form className="create__form" onSubmit={handleSubmit}>
-            <div className="create__form-div">
-              <label className="create__form-tag">Title</label>
-              <input
-                type="text"
-                value={newForm.title}
-                onChange={handleChange}
-                name="title"
-                className="create__form-input"
-                placeholder="Title"
-              />
+          <div className="create__details">
+            <div className="create__info">
+              <span className="create__subtitle">General Info</span>
+              <form onSubmit={handleSubmit}>
+                <ul>
+                  {/* title */}
+                  <li>
+                    <i className="bx bxs-star"></i>{" "}
+                    <span className="create__label">Title: </span>
+                    <input
+                      type="text"
+                      name="title"
+                      value={newForm.title}
+                      onChange={handleChange}
+                    />
+                  </li>
+                  {/* image */}
+                  <li>
+                    <i className="bx bx-camera"></i>{" "}
+                    <span className="create__label">Image: </span>
+                    <input
+                      type="text"
+                      name="image"
+                      value={newForm.image}
+                      onChange={handleChange}
+                    />
+                  </li>
+                  {/* prepTime */}
+                  <li>
+                    <i className="bx bx-restaurant"></i>{" "}
+                    <span className="create__label">Prep time: </span>
+                    <input
+                      type="text"
+                      name="prepTime"
+                      value={newForm.prepTime}
+                      onChange={handleChange}
+                    />
+                  </li>
+                  {/* cookingTime */}
+                  <li>
+                    <i className="bx bx-time"></i>{" "}
+                    <span className="create__label">Cooking time: </span>
+                    <input
+                      type="text"
+                      name="cookingTime"
+                      value={newForm.cookingTime}
+                      onChange={handleChange}
+                    />
+                  </li>
+                  {/* skillLevel */}
+                  <li>
+                    <i className="bx bx-signal-5"></i>{" "}
+                    <span className="create__label">Skill level: </span>
+                    <input
+                      type="text"
+                      name="skillLevel"
+                      value={newForm.skillLevel}
+                      onChange={handleChange}
+                    />
+                  </li>
+                  {/* makes */}
+                  <li>
+                    <i className="bx bxs-dish"></i>{" "}
+                    <span className="create__label">Makes: </span>
+                    <input
+                      type="text"
+                      name="makes"
+                      value={newForm.makes}
+                      onChange={handleChange}
+                    />
+                  </li>
+                </ul>
+                {/* TODO: Change Schema to make Ingredients mappable */}
+                <i className="bx bxs-bowl-rice"></i>{" "}
+                <span className="create__subtitle">Ingredients</span>
+                <ul>
+                  <li>
+                    <input
+                      type="text"
+                      name="ingredients"
+                      value={newForm.ingredients}
+                      onChange={handleChange}
+                    />
+                  </li>
+                </ul>
+                {/* TODO: Change Schema to make Tips mappable */}
+                <i className="bx bxs-bulb"></i>{" "}
+                <span className="create__subtitle">Tips for this create</span>
+                <ul>
+                  <li>
+                    <input
+                      type="text"
+                      name="tips"
+                      value={newForm.tips}
+                      onChange={handleChange}
+                    />
+                  </li>
+                </ul>
+                <div className="create__buttons-wrapper">
+                  <input
+                    className="primary"
+                    type="submit"
+                    value="Submit New Recipe"
+                  />
+                </div>
+              </form>
             </div>
 
-            <div className="create__form-div">
-              <label className="create__form-tag">Image</label>
-              <input
-                type="text"
-                value={newForm.image}
-                onChange={handleChange}
-                name="image"
-                className="create__form-input"
-                placeholder="Image"
-              />
+            <div className="create__instructions">
+              {/* TODO: Change Schema to make Instructions mappable */}
+              <span className="create__subtitle">Instructions</span>
+              <ol>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  error nulla fugit veritatis inventore ex nesciunt, aut modi
+                  nihil maiores animi impedit quidem laudantium. Libero earum
+                  aliquam consequuntur optio repellat.
+                </li>
+                <li>Pending</li>
+                <li>Pending</li>
+                <li>Pending</li>
+                <li>Pending</li>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Sapiente voluptatem provident praesentium sequi commodi
+                  laboriosam est! Quis enim esse iure molestiae cum, culpa
+                  dolores quo? Ab adipisci dolores assumenda doloremque!
+                </li>
+                <li>Pending</li>
+                <li>Pending</li>
+                <li>Pending</li>
+              </ol>
             </div>
-
-            <div className="create__form-div">
-              <label className="create__form-tag">Prep Time</label>
-              <input
-                type="text"
-                value={newForm.prepTime}
-                onChange={handleChange}
-                name="prepTime"
-                className="create__form-input-small"
-                placeholder="Prep Time"
-              />
-            </div>
-
-            <div className="create__form-div">
-              <label className="create__form-tag">Cooking Time</label>
-              <input
-                type="text"
-                value={newForm.cookingTime}
-                onChange={handleChange}
-                name="cookingTime"
-                className="create__form-input-small"
-                placeholder="Cooking Time"
-              />
-            </div>
-
-            <div className="create__form-div">
-              <label className="create__form-tag">Skill Level</label>
-              <input
-                type="text"
-                value={newForm.skillLevel}
-                onChange={handleChange}
-                name="skillLevel"
-                className="create__form-input"
-                placeholder="Skill Level"
-              />
-            </div>
-
-            <div className="create__form-div">
-              <label className="create__form-tag">Makes</label>
-              <input
-                type="text"
-                value={newForm.makes}
-                onChange={handleChange}
-                name="makes"
-                className="create__form-input"
-                placeholder="Makes"
-              />
-            </div>
-
-            <div className="create__form-div">
-              <label className="create__form-tag">Ingredients</label>
-              <input
-                type="text"
-                value={newForm.ingredients}
-                onChange={handleChange}
-                name="ingredients"
-                className="create__form-input-long"
-                placeholder="Ingredients"
-              />
-            </div>
-
-            <div className="create__form-div">
-              <label className="create__form-tag">Tips</label>
-              <input
-                type="text"
-                value={newForm.tips}
-                onChange={handleChange}
-                name="tips"
-                className="create__form-input"
-                placeholder="Tips"
-              />
-            </div>
-
-            <input
-              className="recipe__button primary"
-              type="submit"
-              value="Add Recipe"
-            />
-          </form>
-        </article>
-      </section>
-    </>
+          </div>
+        </div>
+      </article>
+    </section>
   );
 }
 
