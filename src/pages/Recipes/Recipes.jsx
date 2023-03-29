@@ -24,7 +24,7 @@ function Recipes({ recipes }) {
                   <Link to={`/recipes/${recipe._id}`}>
                     <h3 className="recipes__title">{recipe.title}</h3>
                   </Link>
-                  <div className="recipes__links">
+                  {/* <div className="recipes__links">
                     <a
                       href={recipe._id}
                       target="_blank"
@@ -41,7 +41,7 @@ function Recipes({ recipes }) {
                       Directions{" "}
                       <i className="bx bx-right-arrow-alt recipes__button-icon"></i>
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               );
             })}
