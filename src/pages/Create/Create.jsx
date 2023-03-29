@@ -25,6 +25,7 @@ function Create({ recipes, createRecipes }) {
     event.preventDefault();
     //if(Object.values(newForm).length === 0) return; //if there are no values inside the newForm state object, terminate function execution
     createRecipes(newForm);
+    alert("Your recipe has been created");
   };
 
   return (
