@@ -2,11 +2,11 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
-  --orange: #FF8E56;
-  --orange-light: #FFB48F;
-  --white: #FFFFFF;
-  --teal: #7DBEC6;
-  --gray-light: #A4B7C3;
+  --orange: #ff8e56;
+  --orange-light: #ffb48f;
+  --white: #ffffff;
+  --teal: #7dbec6;
+  --gray-light: #a4b7c3;
   --charcoal: #242424;
   --charcoal-light: #323232;
   /*========== Font and Typography ==========*/
@@ -222,7 +222,7 @@ header nav {
   justify-content: space-between;
   align-items: center;
   -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 header nav .nav__logo {
   font-family: var(--logo-font);
@@ -246,7 +246,7 @@ header nav .nav__toggle {
 header nav .nav__list {
   display: flex;
   -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  column-gap: 2rem;
 }
 header nav .nav__link {
   display: flex;
@@ -287,4 +287,4 @@ header nav .nav__toggle {
   header nav {
     height: 4rem;
   }
-}/*# sourceMappingURL=header.css.map */
+} /*# sourceMappingURL=header.css.map */
