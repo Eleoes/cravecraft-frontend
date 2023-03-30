@@ -31,3 +31,5 @@ To enjoy the app click the following link:
 - As a user I'd like to generate a grocery list. 
 
 ## Screenshots
+
+WIP...
