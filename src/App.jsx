@@ -1,14 +1,25 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { auth, onAuthStateChanged } from "./firebase";
 import BaseLayout from "./layouts/BaseLayout";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Recipes from "./pages/Recipes/Recipes";
 import Create from "./pages/Create/Create";
 import Recipe from "./pages/Recipe/Recipe";
+import Login from "./components/Login/Login";
 
 function App() {
   const [recipes, setRecipes] = useState(null);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      setUser(user)
+    });
+  }, []);
+
+  // console.log(user);
 
   const API_URL = "https://cravecraft-api.onrender.com/api/recipes";
 
@@ -61,9 +72,11 @@ function App() {
   };
 
   return (
+  <>
+  {user ? 
     <Routes>
       <Route path="/" element={<BaseLayout />}>
-        <Route index element={<Home />} />
+        <Route index element={<Home user={user}/>} />
         <Route path="about" element={<About />} />
 
         <Route path="recipes">
@@ -82,6 +95,11 @@ function App() {
         />
       </Route>
     </Routes>
+  : 
+  <Login />
+  }
+  </>
+    
   );
 }
 

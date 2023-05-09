@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { logout } from '../../firebase';
 
 const Navigation = () => {
     return (
@@ -10,6 +11,9 @@ const Navigation = () => {
                 </li>
                 <li className="nav__item">
                     <Link to="/recipes" className="nav__link">Recipes</Link>
+                </li>
+                <li className="nav__item">
+                    <Link onClick={logout} className="nav__link">Logout</Link>
                 </li>
             </ul>
         </nav>

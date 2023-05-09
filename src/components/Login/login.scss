@@ -1,0 +1,11 @@
+.login {
+    height: 100vh;
+    background-color: var(--white);
+
+    button {
+        place-self: center;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+}

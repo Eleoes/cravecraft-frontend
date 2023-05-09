@@ -13,16 +13,16 @@ const Footer = () => {
             <nav className="container" aria-label="Main Navigation">
                 <ul>
                     <li>
-                        <Link to="/" aria-label="Link to Home page"><i class='bx bxs-home'></i><span className="visually-hidden">Home</span></Link>
+                        <Link to="/" aria-label="Link to Home page"><i className='bx bxs-home'></i><span className="visually-hidden">Home</span></Link>
                     </li>
                     <li>
-                        <Link to="#" aria-label="Link to Favorites page"><i class='bx bx-heart'></i><span className="visually-hidden">Favorites</span></Link>
+                        <Link to="#" aria-label="Link to Favorites page"><i className='bx bx-heart'></i><span className="visually-hidden">Favorites</span></Link>
                     </li>
                     <li>
-                        <Link to="/recipes" aria-label="Link to Recipes page"><i class='bx bx-search'></i><span className="visually-hidden">Recipes</span></Link>
+                        <Link to="/recipes" aria-label="Link to Recipes page"><i className='bx bx-search'></i><span className="visually-hidden">Recipes</span></Link>
                     </li>
                     <li>
-                        <Link to="#" aria-label="Link to User page"><i class='bx bx-user-circle'></i><span className="visually-hidden">User</span></Link>
+                        <Link to="#" aria-label="Link to User page"><i className='bx bx-user-circle'></i><span className="visually-hidden">User</span></Link>
                     </li>
                 </ul>
             </nav>
